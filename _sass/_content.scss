@@ -91,25 +91,6 @@
   margin-top: 2.14285em;
 }
 
-.post-full .post-content > p:first-child:first-letter {
-  color: $gray-darkest;
-  font-weight: 400;
-  font-size: 72px;
-  font-family: $font-secondary;
-  float: left;
-  line-height: 0.8;
-  margin-right: 15px;
-  position: relative;
-  text-transform: uppercase;
-  vertical-align: bottom;
-}
-
-@-moz-document url-prefix() {
-  .post-full .post-content > p:first-child:first-letter {
-    padding-top: 0.08em;
-  }
-}
-
 .comments-area,
 .read-next,
 .tagcloud,
