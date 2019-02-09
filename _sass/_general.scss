@@ -4,7 +4,7 @@
  */
 html {
   font-family: $font-primary;
-  font-size: 112.5%;
+  font-size: 100%;
   height: 100%;
   min-height: 100%;
 }
@@ -27,47 +27,54 @@ a:hover {
   text-decoration: none;
 }
 
-h1,
+h1 {
+  color: $gray-darkest;
+  font-family: $font-secondary;
+  font-weight: 500;
+  line-height: 1.2;
+  text-rendering: optimizeLegibility;
+}
+
 h2,
 h3,
 h4,
 h5,
 h6 {
   color: $gray-darkest;
-  font-family: $font-secondary;
-  font-weight: 600;
-  line-height: 1.2;
+  font-family: $font-primary;
+  font-weight: 400;
+  line-height: 1.1;
   text-rendering: optimizeLegibility;
 }
 
 h1 {
-  font-size: 2.66667rem;
-  margin: 0.75em 0 0.375em;
-}
-
-h2 {
   font-size: 2rem;
-  margin: 0.83333em 0 0.41667em;
-}
-
-h3 {
-  font-size: 1.66667rem;
   margin: 1em 0 0.5em;
 }
 
-h4 {
-  font-size: 1.33333rem;
+h2 {
+  font-size: 1.66667rem;
   margin: 1.25em 0 0.625em;
 }
 
-h5 {
-  font-size: 1.11111rem;
+h3 {
+  font-size: 1.33333rem;
   margin: 1.5em 0 0.75em;
 }
 
-h6 {
-  font-size: 1rem;
+h4 {
+  font-size: 1.11111rem;
   margin: 1.66667em 0 0.83333em;
+}
+
+h5 {
+  font-size: 1rem;
+  margin: 1.8em 0 1em;
+}
+
+h6 {
+  font-size: 0.83333em;
+  margin: 2em 0 1.25em;
 }
 
 h1:first-child,
@@ -80,7 +87,7 @@ h6:first-child {
 }
 
 p {
-  margin: 0 0 1.66667em;
+  margin: 0 0 0.875em;
 }
 
 address {
@@ -179,16 +186,20 @@ ol {
   padding: 0 0 0 1.66667em;
 }
 
+ol > li {
+  margin-bottom: 0.5em;
+}
+
 li > ul,
 li > ol {
   margin-bottom: 0;
 }
 
 hr {
-  background-color: $gray-lighter;
+  background-color: $gold-lighter;
   border: 0;
   height: 1px;
-  margin: 1.66667em 0;
+  margin: 0.4em 0;
 }
 
 table {
@@ -671,7 +682,7 @@ code[class*="language-"],
 pre[class*="language-"] {
   color: $gray-dark;
   background: 0;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: monospace, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono';
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -685,6 +696,7 @@ pre[class*="language-"] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+  padding: 0 1.2em;
 }
 
 :not(pre) > code[class*="language-"] {

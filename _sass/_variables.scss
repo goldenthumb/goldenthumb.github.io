@@ -1,5 +1,7 @@
 // Fonts
-$font-primary: 'Karla', sans-serif;
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+$font-primary: 'Noto Sans KR', sans-serif;
 $font-secondary: 'Crimson Text', serif;
 
 // Colors
@@ -11,3 +13,4 @@ $gray: #666;
 $gray-light: #aaa;
 $gray-lighter: #eee;
 $yellow: #fffac4;
+$gold-lighter: #eae0d1;
