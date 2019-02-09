@@ -1,2 +1,2 @@
 # goldenthumb.github.io
-github page
+[blog](https://goldenthumb.github.io)
