@@ -1,0 +1,15 @@
+{
+  "short_name": "Goldenthumb",
+  "name": "Goldenthumb Blog",
+  "icons": [
+    {
+      "src": "img/icon.jpg",
+      "type": "image/jpg",
+      "sizes": "192x192"
+    }
+  ],
+  "background_color": "#FDFDFD",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}

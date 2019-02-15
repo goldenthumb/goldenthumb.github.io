@@ -24,6 +24,8 @@
 
   <!-- CSS Styles -->
   <link href="{{ site.baseurl }}/assets/css/style.css" rel="stylesheet">
+  <link rel="manifest" href="{{ site.baseurl }}/assets/manifest.json?v=0.0.1">
+  <link rel="apple-touch-icon" sizes="192x192" href="{{ site.baseurl }}/assets/images/icon.jpg">
 </head>
 
 {% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
@@ -54,7 +56,17 @@
 <script src="{{ site.baseurl }}/assets/js/jquery-3.3.1.min.js"></script>
 <script src="{{ site.baseurl }}/assets/js/plugins.js"></script>
 <script src="{{ site.baseurl }}/assets/js/custom.js"></script>
-
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('{{ site.baseurl }}/assets/js/service-worker.js?v=0.0.1')
+      .then(function(success) {
+        console.log('[Service Worker 등록 완료]', success);
+      })
+      .catch(function(error) {
+        console.log('[Service Worker 등록 실패]', error);
+      });
+  }
+</script>
 </body>
 
 </html>
