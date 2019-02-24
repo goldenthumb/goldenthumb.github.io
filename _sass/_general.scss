@@ -374,6 +374,11 @@ video {
 img {
   height: auto;
   max-width: 100%;
+
+  &.center {
+    display: block;
+    margin:0 auto;
+  }
 }
 
 .kg-image-card,
