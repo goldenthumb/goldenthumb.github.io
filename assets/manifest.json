@@ -3,7 +3,7 @@
   "name": "Goldenthumb Blog",
   "icons": [
     {
-      "src": "img/icon.jpg",
+      "src": "images/icon.jpg",
       "type": "image/jpg",
       "sizes": "192x192"
     }
