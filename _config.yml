@@ -30,8 +30,6 @@ navigation:
     url: /
   - text: About
     url: /about
-  - text: Contact Me
-    url: /contact
 
 # Required Plugins
 plugins_dir:
