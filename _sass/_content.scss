@@ -368,9 +368,13 @@
     margin-left: -1px;
     position: absolute;
     top: 0;
-    left: 2em;
+    left: 1em;
     width: 2px;
     height: 100%;
+
+    @media only screen and (max-width: 600px) {
+      left: 0.75em;
+    }
   }
 }
 
@@ -395,19 +399,36 @@
 }
 
 .timeline-event-copy {
-  padding: 2em;
+  padding: 2em 1em;
   position: relative;
   top: -1.875em;
-  left: 4em;
+  left: 2em;
   width: 100%;
 
+  @media only screen and (max-width: 600px) {
+    width: 92%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    left: 1em;
+  }
+
   h3 {
-    font-size: 1.75em;
+    font-size: 1.5em;
+
+    @media only screen and (max-width: 600px) {
+      font-size: 1.25em;
+    }
   }
 
   h4 {
     font-size: 1.2em;
     margin-bottom: 1.2em;
+
+    @media only screen and (max-width: 600px) {
+      font-size: 1em;
+      margin-bottom: 1em;
+    }
   }
 
   strong {
@@ -432,9 +453,13 @@
   margin: 0.5em 0.5em 0.5em -0.5em;
   position: absolute;
   top: 0;
-  left: 2.2em;
+  left: 1.2em;
   width: 1em;
   height: 1em;
+
+  @media only screen and (max-width: 600px) {
+    left: 0.8em;
+  }
 }
 
 .timeline-event-thumbnail {

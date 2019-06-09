@@ -26,7 +26,7 @@ github: 'goldenthumb'
 
 # Navigation
 navigation:
-  - text: Home
+  - text: Blog
     url: /
 
 # Required Plugins
