@@ -7,7 +7,7 @@ tags: [es6, design pattern, creational pattern, javascript]
 ## CREATIONAL PATTERNS
 ---
 - [Abstract Factory](#abstract-factory-추상-팩토리)
-- Builder
+- [Builder](#builder)
 - Factory Method
 - Prototype
 - Singleton
@@ -132,4 +132,55 @@ function run() {
 run();
 </code>
 </pre>
-### AbstractFactory
+
+### Builder
+다양한 객체 생성 문제에 대한 유연한 솔루션을 제공하기 위해 복합 객체의 생성 과정과 표현 방법을 분리하여 동일한 생성 절차에서 서로 다른 표현 결과를 만들 수 있게 하는 패턴입니다.
+<br><br>
+Builder 패턴 생성자에 들어갈 여러개의 가변 인자(varargs) 매개 변수를 받아들이고 모든 매개 변수를 받은 뒤에 이 변수들을 통합해서 한번에 생성하는 패턴을 말합니다.
+<br><br>
+Builder를 사용하는 가장 공통적인 동기는 복잡한 객체를 만드는 클라이언트 코드를 단순화하는 것입니다. 클라이언트는 실제 작업의 수행 방법을 모른채 Builder가 수행 한 단계를 계속 지시 할 수 있습니다. 
+<br><br>
+
+<pre>
+<code class="language-javascript">
+class ProductBuilder {
+  constructor() {
+    this.name = null;
+    this.price = 0;
+    this.category = 'etc';
+  }
+
+  withName(name) {
+    this.name = name;
+    return this;
+  }
+
+  withPrice(price) {
+    this.price = price;
+    return this;
+  }
+
+  withCategory(category) {
+    this.category = category;
+    return this;
+  }
+
+  build() {
+    return {
+      name: this.name,
+      price: this.price,
+      category: this.category,
+    }
+  }
+}
+
+(() => {
+  const productA = new ProductBuilder()
+    .withName('A')
+    .withCategory('ABC')
+    .build();
+
+  console.log(productA);
+})();
+</code>
+</pre>
