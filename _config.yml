@@ -28,6 +28,8 @@ github: 'goldenthumb'
 navigation:
   - text: Blog
     url: /
+  - text: About
+    url: /about
 
 # Required Plugins
 plugins_dir:
