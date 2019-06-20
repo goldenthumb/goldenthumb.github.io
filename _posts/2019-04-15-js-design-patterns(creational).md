@@ -8,9 +8,8 @@ tags: [es6, design pattern, creational pattern, javascript]
 ---
 - [Abstract Factory](#abstract-factory-추상-팩토리)
 - [Builder](#builder)
-- Factory Method
-- Prototype
-- Singleton
+- [Prototype](#prototype)
+- [Singleton](#singleton)
 
 
 ### Abstract Factory (추상 팩토리)
@@ -128,8 +127,6 @@ function run() {
   console.log('> product :', productA2.getName());
   console.log('> product :', productB2.getName());
 };
-
-run();
 </code>
 </pre>
 
@@ -174,13 +171,79 @@ class ProductBuilder {
   }
 }
 
-(() => {
+function run() {
   const productA = new ProductBuilder()
     .withName('A')
     .withCategory('ABC')
     .build();
 
   console.log(productA);
-})();
+}
+</code>
+</pre>
+
+### Prototype
+prototype 패턴은 “이미 생성된 객체를 복제해서 새로운 객체를 생성하는 방법“입니다.
+이 패턴은 인스턴스를 생성할 때 사용하는 패턴 중 하나인데, 객체를 복사하는 방식으로 인스턴스를 생성해 냅니다.<br><br>
+
+<pre>
+<code class="language-javascript">
+class Sheep {
+  constructor() {
+    this.name = 'sheep';
+  }
+  
+  sayHi() {
+    return 'Hi! ' + this.name;
+  }
+}
+
+const sheep = new Sheep();
+
+// 1)
+const blackSheep = {
+  __proto__: sheep,
+  name: 'black sheep'
+};
+
+console.log(sheep.sayHi());   // Hi! sheep
+console.log(blackSheep.__proto__.sayHi());   // Hi! sheep
+console.log(blackSheep.sayHi());  // Hi! black sheep
+
+
+// 2)
+const whiteSheep = Object.create(sheep, { name: { value: 'white sheep' } });
+
+console.log(sheep.sayHi());   // Hi! sheep
+console.log(whiteSheep.__proto__.sayHi());   // Hi! sheep
+console.log(whiteSheep.sayHi());  // Hi! white sheep
+</code>
+</pre>
+
+
+### Singleton
+singleton 패턴은 생성자가 여러 차례 호출되더라도 실제로 생성되는 객체는 하나이고 최초 생성 이후에 호출된 생성자는 최초의 생성자가 생성한 객체를 리턴한다.
+<br><br>
+싱글톤으로 만들어진 클래스의 인스턴스는 전역 인스턴스이기 때문에 다른 클래스의 인스턴스들이 데이터를 공유하기 쉬운 장점이 있으나, 
+싱글톤 인스턴스가 너무 많은 일을 하거나 많은 데이터를 공유시킬 경우 다른 클래스의 인스턴스들 간에 결합도가 높아져 
+"개방-폐쇄 원칙" 을 위배하게 됩니다.
+
+<pre>
+<code class="language-javascript">
+class Person {
+  constructor() {
+    if (typeof Person.instance === 'object') {
+      return Person.instance;
+    }
+    
+    Person.instance = this;
+    return this;
+  }
+}
+
+const personA = new Person();
+const personB = new Person();
+
+console.log(personA === personB)    // true
 </code>
 </pre>
