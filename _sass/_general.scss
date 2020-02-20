@@ -87,8 +87,9 @@ h6:first-child {
 }
 
 p {
-  margin: 0 0 0.875em;
-  letter-spacing: 0.04em;
+  margin: 0 0 1.66667em;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
 }
 
 address {
@@ -128,8 +129,8 @@ pre code {
 blockquote {
   color: $gray-darkest;
   font-family: $font-secondary;
-  font-size: 1.4rem;
-  line-height: 1.25;
+  font-size: 1.6rem;
+  line-height: 1.5;
   margin: 0 0 1.25em;
   padding: 45px;
   position: relative;
