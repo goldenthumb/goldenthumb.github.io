@@ -69,17 +69,23 @@ $clipboard.addEventListener('click', async () => {
             const blob = await clipboardItem.getType(type);
             
             // text
-            const text = await blob.text();
+            if (type === "text/plain") {
+                const text = await blob.text();
+                console.log(text);
+            }
 
             // binary data
-            const imageData = await blob.arrayBuffer();
-            
-            /*
-            const reader = new FileReader();
-            reader.addEventListener('loadend', (data) => {
-                const imageData = data;
-            });
-            */
+            if (type === "image/png") {
+                const imageData = await blob.arrayBuffer();
+                console.log(imageData);
+
+                /*
+                const reader = new FileReader();
+                reader.addEventListener('loadend', (data) => {
+                    const imageData = data;
+                });
+                */
+            }
         }
     }
 });
