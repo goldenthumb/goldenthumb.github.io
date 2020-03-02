@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'JS design patterns (creational)'
+title: 'JS design patterns (Creational)'
 tags: [es6, design pattern, creational pattern, javascript]
 ---
 
@@ -27,105 +27,105 @@ Abstract Factory 패턴에서는 추상적인 공장이 등장하고, 추상적�
 <pre>
 <code class="language-javascript">
 class AbstractFactory {
-  createProductA (product) {
-    throw new Error('Abstract method!');
-  }
+    createProductA (product) {
+        throw new Error('Abstract method!');
+    }
 
-  createProductB (product) {
-    throw new Error('Abstract method!');
-  }
+    createProductB (product) {
+        throw new Error('Abstract method!');
+    }
 }
 
 class ConcreteFactory1 extends AbstractFactory {
-  createProductA (product) {
-    return new ProductA1(product);
-  }
+    createProductA (product) {
+        return new ProductA1(product);
+    }
 
-  createProductB (product) {
-    return new ProductB1(product);
-  }
+    createProductB (product) {
+        return new ProductB1(product);
+    }
 }
 
 class ConcreteFactory2 extends AbstractFactory {
-  createProductA (product) {
-    return new ProductA2(product);
-  }
+    createProductA (product) {
+        return new ProductA2(product);
+    }
 
-  createProductB (product) {
-    return new ProductB2(product);
-  }
+    createProductB (product) {
+        return new ProductB2(product);
+    }
 }
 
 class AbstractProductA {
-  getName() {
-    throw new Error('Abstract method!');
-  }
+    getName() {
+        throw new Error('Abstract method!');
+    }
 }
 
 class AbstractProductB {
-  getName() {
-    throw new Error('Abstract method!');
-  }
+    getName() {
+        throw new Error('Abstract method!');
+    }
 }
 
 class ProductA1 extends AbstractProductA {
-  constructor(name) {
-    super();
-    this._name = name;
-  }
+    constructor(name) {
+        super();
+        this._name = name;
+    }
 
-  getName() {
-    return this._name;
-  }
+    getName() {
+        return this._name;
+    }
 }
 
 class ProductA2 extends AbstractProductA {
-  constructor(name) {
-    super();
-    this._name = name;
-  }
+    constructor(name) {
+        super();
+        this._name = name;
+    }
 
-  getName() {
-    return this._name;
-  }
+    getName() {
+        return this._name;
+    }
 }
 
 class ProductB1 extends AbstractProductB {
-  constructor(name) {
-    super();
-    this._name = name;
-  }
+    constructor(name) {
+        super();
+        this._name = name;
+    }
 
-  getName() {
-    return this._name;
-  }
+    getName() {
+        return this._name;
+    }
 }
 
 class ProductB2 extends AbstractProductB {
-  constructor(name) {
-    super();
-    this._name = name;
-  }
+    constructor(name) {
+        super();
+        this._name = name;
+    }
 
-  getName() {
-    return this._name;
-  }
+    getName() {
+        return this._name;
+    }
 }
 
 function run() {
-  const factory1 = new ConcreteFactory1();
-  const factory2 = new ConcreteFactory2();
+    const factory1 = new ConcreteFactory1();
+    const factory2 = new ConcreteFactory2();
 
-  const productA1 = factory1.createProductA('a1');
-  const productB1 = factory1.createProductB('b1');
+    const productA1 = factory1.createProductA('a1');
+    const productB1 = factory1.createProductB('b1');
 
-  const productA2 = factory2.createProductA('a2');
-  const productB2 = factory2.createProductB('b2');
-  
-  console.log('> product :', productA1.getName());
-  console.log('> product :', productB1.getName());
-  console.log('> product :', productA2.getName());
-  console.log('> product :', productB2.getName());
+    const productA2 = factory2.createProductA('a2');
+    const productB2 = factory2.createProductB('b2');
+    
+    console.log('> product :', productA1.getName());
+    console.log('> product :', productB1.getName());
+    console.log('> product :', productA2.getName());
+    console.log('> product :', productB2.getName());
 };
 </code>
 </pre>
@@ -141,43 +141,43 @@ Builder를 사용하는 가장 공통적인 동기는 복잡한 객체를 만드
 <pre>
 <code class="language-javascript">
 class ProductBuilder {
-  constructor() {
-    this.name = null;
-    this.price = 0;
-    this.category = 'etc';
-  }
-
-  withName(name) {
-    this.name = name;
-    return this;
-  }
-
-  withPrice(price) {
-    this.price = price;
-    return this;
-  }
-
-  withCategory(category) {
-    this.category = category;
-    return this;
-  }
-
-  build() {
-    return {
-      name: this.name,
-      price: this.price,
-      category: this.category,
+    constructor() {
+        this.name = null;
+        this.price = 0;
+        this.category = 'etc';
     }
-  }
+
+    withName(name) {
+        this.name = name;
+        return this;
+    }
+
+    withPrice(price) {
+        this.price = price;
+        return this;
+    }
+
+    withCategory(category) {
+        this.category = category;
+        return this;
+    }
+
+    build() {
+        return {
+            name: this.name,
+            price: this.price,
+            category: this.category,
+        }
+    }
 }
 
 function run() {
-  const productA = new ProductBuilder()
-    .withName('A')
-    .withCategory('ABC')
-    .build();
+    const productA = new ProductBuilder()
+        .withName('A')
+        .withCategory('ABC')
+        .build();
 
-  console.log(productA);
+    console.log(productA);
 }
 </code>
 </pre>
@@ -189,21 +189,21 @@ prototype 패턴은 “이미 생성된 객체를 복제해서 새로운 객체�
 <pre>
 <code class="language-javascript">
 class Sheep {
-  constructor() {
-    this.name = 'sheep';
-  }
-  
-  sayHi() {
-    return 'Hi! ' + this.name;
-  }
+    constructor() {
+        this.name = 'sheep';
+    }
+    
+    sayHi() {
+        return 'Hi! ' + this.name;
+    }
 }
 
 const sheep = new Sheep();
 
 // 1)
 const blackSheep = {
-  __proto__: sheep,
-  name: 'black sheep'
+    __proto__: sheep,
+    name: 'black sheep'
 };
 
 console.log(sheep.sayHi());   // Hi! sheep
@@ -231,14 +231,14 @@ singleton 패턴은 생성자가 여러 차례 호출되더라도 실제로 생�
 <pre>
 <code class="language-javascript">
 class Person {
-  constructor() {
-    if (typeof Person.instance === 'object') {
-      return Person.instance;
+    constructor() {
+        if (typeof Person.instance === 'object') {
+            return Person.instance;
+        }
+        
+        Person.instance = this;
+        return this;
     }
-    
-    Person.instance = this;
-    return this;
-  }
 }
 
 const personA = new Person();
