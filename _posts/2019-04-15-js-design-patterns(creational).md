@@ -10,7 +10,7 @@ tags: [es6, design pattern, creational pattern, javascript]
 - [Builder](#builder)
 - [Prototype](#prototype)
 - [Singleton](#singleton)
-
+<br><br>
 
 ### Abstract Factory (추상 팩토리)
 서로 연관되거나 의존적인 객체들의 조합을 생성하기 위한 인터페이스를 제공합니다. 
@@ -129,6 +129,7 @@ function run() {
 };
 </code>
 </pre>
+<br><br>
 
 ### Builder
 다양한 객체 생성 문제에 대한 유연한 솔루션을 제공하기 위해 복합 객체의 생성 과정과 표현 방법을 분리하여 동일한 생성 절차에서 서로 다른 표현 결과를 만들 수 있게 하는 패턴입니다.
@@ -181,6 +182,7 @@ function run() {
 }
 </code>
 </pre>
+<br><br>
 
 ### Prototype
 prototype 패턴은 “이미 생성된 객체를 복제해서 새로운 객체를 생성하는 방법“입니다.
@@ -219,7 +221,7 @@ console.log(whiteSheep.__proto__.sayHi());   // Hi! sheep
 console.log(whiteSheep.sayHi());  // Hi! white sheep
 </code>
 </pre>
-
+<br><br>
 
 ### Singleton
 singleton 패턴은 생성자가 여러 차례 호출되더라도 실제로 생성되는 객체는 하나이고 최초 생성 이후에 호출된 생성자는 최초의 생성자가 생성한 객체를 리턴한다.
