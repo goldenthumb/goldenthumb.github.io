@@ -71,5 +71,3 @@ tags: [good programmer]
 - [켄트백의 구현패턴](http://www.acornpub.co.kr/book/kentpattern)
 - [탁월한 프론트엔드 엔지니어가 되는 법](https://hyunseob.github.io/2016/02/21/how-to-become-a-great-frontend-engineer/)
 - [좋은 코딩을 위한 13가지 규칙](https://medium.com/@erwinousy/%EC%A2%8B%EC%9D%80-%EC%BD%94%EB%94%A9%EC%9D%84-%EC%9C%84%ED%95%9C-13%EA%B0%80%EC%A7%80-%EA%B7%9C%EC%B9%99-hackernoon-%EA%B8%80%EB%93%A4-%EC%A4%91-%EC%9D%BC%EB%B6%80-%EB%B2%88%EC%97%AD-3ff7d119e926)
-
- 
