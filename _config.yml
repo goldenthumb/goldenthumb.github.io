@@ -15,13 +15,12 @@ mailchimp_url:
 # Add your GA Tracking Id
 ga_analytics: 
 
-# Contact form setings
+# Contact form settings
 email: cyh8914@gamil.com
 contact_page_description: ""
 thankyou_page_description: ""
 
 # Social links
-facebook: 'godenthumb'
 github: 'goldenthumb'
 
 # Navigation
